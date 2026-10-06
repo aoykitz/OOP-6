@@ -12,7 +12,7 @@ class CPU {
     virtual ~CPU() {}
     virtual std::string name() const = 0;
     virtual std::string socket() const = 0;
-    virtual double price const = 0;
+    virtual double price() const = 0;
 };
 /**
  * @brief Абстрактный интерфейс материнской платы.
@@ -22,7 +22,7 @@ class Motherboard {
     virtual ~Motherboard() {}
     virtual std::string name() const = 0;
     virtual std::string socket() const = 0;
-    virtual double price const = 0;
+    virtual double price() const = 0;
 };
 /** @brief Процессор Intel (LGA1700). */
 class IntelCPU : public CPU {

@@ -1,0 +1,29 @@
+[33mcommit 7309397c4dc1e5431bf4b337baec0d3637ba6da0[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Adam <defember1982@mail.ru>
+Date:   Tue Oct 6 00:55:16 2026 +0500
+
+    добавлен doxygen
+
+[33mcommit 16de479f0dc5fd4a9bb82d63b7e5f45115f61560[m
+Author: Adam <defember1982@mail.ru>
+Date:   Sun Oct 4 02:36:53 2026 +0500
+
+    реализована абстрактная фабрика для компонентов платформ
+
+[33mcommit 1aa776800fc6816872adb6d1ac4f7a1b4d85a05e[m
+Author: Adam <defember1982@mail.ru>
+Date:   Sat Oct 3 17:01:15 2026 +0500
+
+    Добавлен Singletone каталога цен
+
+[33mcommit d5b48301db789beb815c7d5f80713bb900bf1752[m
+Author: Adam <defember1982@mail.ru>
+Date:   Fri Oct 2 15:46:55 2026 +0500
+
+    добавлены интерфейсы и реализации компонентов Intel и AMD
+
+[33mcommit 4a6d96bb2518b3c0612ff58c1bd89aa6aa72ce69[m
+Author: Adam <defember1982@mail.ru>
+Date:   Fri Oct 2 15:29:36 2026 +0500
+
+    Добавлен каркас проекта: папка src с файлами под паттерны
