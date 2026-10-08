@@ -1,0 +1,73 @@
+@startuml classes
+
+abstract class CPU {
+    +{abstract} name() : string
+    +{abstract} socket() : string
+    +{abstract} price() : double
+}
+
+abstract class Motherboard {
+    +{abstract} name() : string
+    +{abstract} socket() : string
+    +{abstract} price() : double
+}
+
+class IntelCPU
+class IntelMotherboard
+class AMDCPU
+class AMDMotherboard
+
+CPU <|-- IntelCPU
+CPU <|-- AMDCPU
+Motherboard <|-- IntelMotherboard
+Motherboard <|-- AMDMotherboard
+
+abstract class PlatformFactory {
+    +{abstract} platformName() : string
+    +{abstract} createCPU() : CPU
+    +{abstract} createMotherboard() : Motherboard
+}
+
+class IntelFactory
+class AMDFactory
+
+PlatformFactory <|-- IntelFactory
+PlatformFactory <|-- AMDFactory
+
+IntelFactory ..> IntelCPU : создает
+IntelFactory ..> IntelMotherboard : создает
+AMDFactory ..> AMDCPU : создает
+AMDFactory ..> AMDMotherboard : создает
+
+class PriceCatalog {
+    -{static} instance() : PriceCatalog
+    +addPrice(name, price)
+    +getPrice(name) : double
+    -prices : map
+}
+
+class PC {
+    -cpu : CPU*
+    -mb : Motherboard*
+    -platform : string
+    +setCPU(c : CPU*)
+    +setMotherboard(m : Motherboard*)
+    +totalPrice() : double
+    +print()
+}
+
+class PCBuilder {
+    -cpu : CPU*
+    -mb : Motherboard*
+    -platform : string
+    +setCPU(c : CPU*)
+    +setMotherboard(m : Motherboard*)
+    +validate() : bool
+    +build() : PC*
+}
+
+PCBuilder ..> PC : создает
+PC o-- CPU
+PC o-- Motherboard
+
+@enduml
